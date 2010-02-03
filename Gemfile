@@ -10,7 +10,7 @@ gem "haml", "2.2.17"
 
 only :test do
   gem "rspec", "1.3.0"
-  gem "rspec-rails", "1.3.0"
+  gem "rspec-rails", "1.3.1"
   gem "cucumber", "0.6.2"
   gem "factory_girl", "1.2.3"
 end
