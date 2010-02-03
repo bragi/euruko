@@ -8,7 +8,11 @@ def bundle_instruction
   exit 255
 end
 
-require bundler_environment rescue bundle_instruction
+begin
+  require bundler_environment 
+rescue LoadError
+  bundle_instruction
+end
 
 class Rails::Boot
   def run
