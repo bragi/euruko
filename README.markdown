@@ -12,6 +12,10 @@ Minimal conference handling app that allows to:
 
 Make sure you have RubyGems 1.3.5 installed and that you have http://gemcutter.org/ in your gem sources.
 
+Install bundler gem:
+
+    gem install bundler
+
 Run in application directory:
 
     gem bundle
