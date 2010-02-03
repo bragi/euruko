@@ -2,4 +2,5 @@ bin/*
 config/database.yml
 db/*.sqlite3
 log/*.log
+rerun.txt
 vendor/bundler_gems/*
