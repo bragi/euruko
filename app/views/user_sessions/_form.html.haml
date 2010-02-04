@@ -1,0 +1,14 @@
+- form_for(@user_session) do |f|
+  %dl
+    %dt= f.label(:email, "E-mail")
+    %dd
+      = f.text_field(:email)
+      = f.error_message_for(:email)
+    
+    %dt= f.label(:password, "Password")
+    %dd
+      = f.text_field(:password)
+      = f.error_message_for(:password)
+  
+  %p= f.submit("Log in")
+  
