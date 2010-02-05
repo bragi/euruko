@@ -18,7 +18,7 @@ Install bundler gem:
 
 Run in application directory:
 
-    gem bundle
-    rake prepare
+    bundle install
+    bundle exec rake prepare
 
 You are ready to go.

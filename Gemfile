@@ -4,6 +4,7 @@ source "http://gems.github.com/"
 gem 'mime-types', '1.15'
 gem 'i18n', '0.3.3'
 gem 'tmail', '1.2.0'
+gem 'tzinfo', '0.3.16'
 gem "rails", "2.3.5"
 gem "sqlite3-ruby", "1.2.5"
 gem "haml", "2.2.17"
