@@ -1,16 +1,16 @@
 source "http://gemcutter.org"
 source "http://gems.github.com/"
 
-bundle_path "vendor/bundler_gems"
-
 gem 'mime-types', '1.15'
+gem 'i18n', '0.3.3'
+gem 'tmail', '1.2.0'
 gem "rails", "2.3.5"
 gem "sqlite3-ruby", "1.2.5"
 gem "haml", "2.2.17"
 gem "authlogic", "2.1.3"
 gem "resource_controller", "0.6.6"
 
-only :test do
+group :test do
   gem "rspec", "1.3.0"
   gem "rspec-rails", "1.3.1"
   gem "cucumber", "0.6.2"
