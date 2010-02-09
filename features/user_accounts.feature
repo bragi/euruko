@@ -12,4 +12,4 @@ Feature: User accounts
     And I fill in "First name" with "John"
     And I fill in "Last name" with "Doe"
     And I press "Create my account"
-    And I should see "We will notify you when the registration starts"
+    Then I should see "We will notify you when the registration starts"
