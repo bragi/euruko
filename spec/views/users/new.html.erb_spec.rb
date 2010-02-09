@@ -6,7 +6,8 @@ describe "/users/new" do
   end
 
   #Delete this example and add some real ones or delete this file
-  it "should tell you where to find the file" do
-    response.should have_tag('p', %r[Find me in app/views/users/new])
+  it "allows to create new user" do
+    response.should have_tag('p', %r[Create your account])
+    response.should have_tag('form[action=?]', users_path)
   end
 end

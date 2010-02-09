@@ -1,3 +1,2 @@
-Given /^I access the site as guest$/ do
-  # Initially do nothing as guest would
+Then /^I should see a nice page$/ do
 end

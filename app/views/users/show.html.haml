@@ -1,1 +1,18 @@
-%p We will notify you when the registration starts
+%p#site_news We will notify you when the registration starts
+
+%h2 Your account data
+
+%dl#user_data
+  %dt First name
+  %dd= h(@user.first_name)
+  
+  %dt Last name
+  %dd= h(@user.last_name)
+  
+  - unless @user.nick_name.blank?
+    %dt Nick name
+    %dd= h(@user.nick_name)
+
+  %dt E-mail
+  %dd= h(@user.email)
+
