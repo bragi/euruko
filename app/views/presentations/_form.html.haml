@@ -1,0 +1,29 @@
+- form_for(@presentation) do |f|
+  %dl
+    %dt= f.label(:topic, "Topic")
+    %dd
+      = f.text_field(:topic)
+      = f.error_message_on(:topic)
+    
+    %dt= f.label(:description, "Description")
+    %dd
+      = f.text_area(:description)
+      = f.error_message_on(:description)
+    
+    %dt= f.label(:speaker_description, "Speaker information")
+    %dd
+      = f.text_area(:speaker_description)
+      = f.error_message_on(:speaker_description)
+    
+    %dt Length
+    %dd
+      = f.radio_button(:length, "standard")
+      = f.label(:length_standard, "1 hour")
+    %dd
+      = f.radio_button(:length, "long")
+      = f.label(:length_long, "2 hours")
+    %dd
+      = f.radio_button(:length, "lightning")
+      = f.label(:length_lightning, "Lightning talk")
+    
+  %p= f.submit("Submit presentation")

@@ -15,4 +15,10 @@
 
   %dt E-mail
   %dd= h(@user.email)
+  
+- unless @user.presentations.blank?
+  %h2 Your presentations
+  
+  = render(:partial => "presentations/presentation", :collection => @user.presentations)
 
+%p= link_to("Submit presentation", new_presentation_path)
