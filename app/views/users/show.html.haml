@@ -15,10 +15,35 @@
 
   %dt E-mail
   %dd= h(@user.email)
-  
-- unless @user.presentations.blank?
-  %h2 Your presentations
-  
-  = render(:partial => "presentations/presentation", :collection => @user.presentations)
 
-%p= link_to("Submit presentation", new_presentation_path)
+#presentations
+  - unless @user.presentations.blank?
+    %h2 Your presentations
+  
+    = render(:partial => "presentations/presentation", :collection => @user.presentations)
+
+  %p= link_to("Submit presentation", new_presentation_path)
+
+#billing_information
+  - @user.billing_information.with do |billing_information|
+    %h2 Your billing information
+    
+    %dl
+      %dt Company name
+      %dd= h(billing_information.name)
+      
+      %dt Full address
+      %dd= textilize_without_paragraph(h(billing_information.name))
+      
+      %dt VAT-ID
+      %dd= h(billing_information.taxid)
+      
+      - billing_information.other.with do |other|
+        %dt Other billing information
+        %dd= h(other)
+      
+      - billing_information.notes.with do |notes|
+        %dt Notes
+        %dd= h(notes)
+  - @user.billing_information.without do
+    %p= link_to("Add billing data", new_billing_information_path)
