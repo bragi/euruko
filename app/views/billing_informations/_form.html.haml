@@ -1,0 +1,27 @@
+- form_for(@billing_information, :url => billing_information_path) do |f|
+  %dl
+    %dt= f.label(:name, "Company name")
+    %dd
+      = f.text_field(:name)
+      = f.error_message_on(:name)
+  
+    %dt= f.label(:address, "Full address")
+    %dd
+      = f.text_area(:address)
+      = f.error_message_on(:address)
+
+    %dt= f.label(:taxid, "VAT-ID")
+    %dd
+      = f.text_field(:taxid)
+      = f.error_message_on(:taxid)
+
+    %dt= f.label(:other, "Other information")
+    %dd
+      = f.text_area(:other)
+      = f.error_message_on(:other)
+
+      %dt= f.label(:notes, "Notes for organizers")
+      %dd
+        = f.text_area(:notes)
+        = f.error_message_on(:notes)
+  %p= f.submit("Save")

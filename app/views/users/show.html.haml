@@ -33,7 +33,7 @@
       %dd= h(billing_information.name)
       
       %dt Full address
-      %dd= textilize_without_paragraph(h(billing_information.name))
+      %dd= simple_format(h(billing_information.name))
       
       %dt VAT-ID
       %dd= h(billing_information.taxid)

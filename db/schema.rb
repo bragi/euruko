@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20100211182558) do
     t.datetime "updated_at"
   end
 
+  add_index "billing_informations", ["user_id"], :name => "index_billing_informations_on_user_id", :unique => true
+
   create_table "presentations", :force => true do |t|
     t.string   "topic",               :null => false
     t.text     "description",         :null => false

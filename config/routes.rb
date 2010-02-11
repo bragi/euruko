@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resource :user_session
-  map.resources :billing_informations
+  map.resource :billing_information
   map.resources :presentations
   map.resources :users
 
