@@ -5,5 +5,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :presentations
   map.resources :users
 
+  map.namespace :administration do |administration|
+    administration.root :controller => 'home'
+    administration.resource :admin_session
+  end
+
   map.root :controller => 'home'
 end

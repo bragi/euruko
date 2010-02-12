@@ -10,7 +10,10 @@ module NavigationHelpers
     
     when /the home\s?page/
       '/'
-    
+    when /administration home\s?page/
+      '/administration'
+    when /administration login page/
+      new_administration_admin_session_path
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
