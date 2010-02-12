@@ -9,6 +9,7 @@ require 'spec/rails'
 #require 'webrat/integrations/rspec-rails'
 
 require 'factory_girl'
+require 'authlogic/test_case'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -54,5 +55,9 @@ Spec::Runner.configure do |config|
   # == Notes
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
+  
+  config.include AuthlogicSpecHelper
+  config.before(:each) do
+    activate_authlogic
+  end
 end
-

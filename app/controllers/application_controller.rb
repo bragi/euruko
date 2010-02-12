@@ -2,12 +2,22 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  class UnauthorizedAccess < ::ActionController::ActionControllerError; end
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user, :current_admin_session, :current_admin
-
+  
+  def require_owner
+    current_admin || object.owner == current_user || send_unauthorized
+  end
+  
+  def send_unauthorized
+    render(:file => 'public/401.html', :status => 401)
+  end
+  
   [:user, :admin].each do |role|
     current_role_session_name = "current_#{role}_session"
     current_role_name = "current_#{role}"
@@ -35,7 +45,7 @@ class ApplicationController < ActionController::Base
       when :user then new_user_session_path
       when :admin then new_administration_admin_session_path
       end
-      send(current_role_name) || redirect_to(redirection_path)
+      send(current_role_name) || redirect_to(redirection_path) && false
     end
   end
 end

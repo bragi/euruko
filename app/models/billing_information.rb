@@ -7,4 +7,6 @@ class BillingInformation < ActiveRecord::Base
   validates_presence_of :taxid
 
   validates_uniqueness_of :user_id
+
+  alias owner user
 end

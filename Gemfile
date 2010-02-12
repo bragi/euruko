@@ -20,4 +20,5 @@ group :test do
   gem "database_cleaner", "0.2.3"
   gem "capybara", "0.2.0"
   gem "factory_girl", "1.2.3"
+  gem "ruby-debug", "0.10.3"
 end

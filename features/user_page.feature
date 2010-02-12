@@ -8,6 +8,3 @@ Feature: User page
     Then I should see "John"
     And I should see "Doe"
     And I should see "We will notify you when the registration starts"
-  
-  
-  
