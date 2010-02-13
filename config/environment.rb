@@ -38,4 +38,8 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  config.gem "sqlite3-ruby", :version => "1.2.5", :lib => 'sqlite3'
+  config.gem "haml", :version => "2.2.17"
+  config.gem "authlogic", :version => "2.1.3"
+  config.gem "resource_controller", :version => "0.6.6"
 end
