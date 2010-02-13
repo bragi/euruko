@@ -24,8 +24,12 @@ namespace :euruko do
   task :link_database_configuration do
     run "ln -s #{deploy_to}/database.yml #{latest_release}/config/"
   end
+  task :link_database do
+    run "ln -s #{deploy_to}/production.sqlite3 #{latest_release}/db/"
+  end
   task :link do
     link_database_configuration
+    link_database
   end
 end
 
