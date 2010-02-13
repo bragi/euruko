@@ -1,0 +1,10 @@
+%h1 All presentations
+
+%table
+  %tr
+    %th Topic
+    %th Speaker
+  - @presentations.each do |presentation|
+    %tr
+      %td= h(presentation.topic)
+      %td= h(presentation.user.full_name)

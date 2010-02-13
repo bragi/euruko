@@ -11,3 +11,10 @@ Given /^I log in as user$/ do
   And %Q{I press "Log in"}
 end
 
+Given /^I log in as admin$/ do
+  Given %Q{admin with "email" "john@example.com" exists}
+  When %Q{I go to the administration home page}
+  And %Q{I fill in "E-mail" with "john@example.com"}
+  And %Q{I fill in "Password" with "user123"}
+  And %Q{I press "Log in"}
+end

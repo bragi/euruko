@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :administration do |administration|
     administration.root :controller => 'home'
     administration.resource :admin_session
+    administration.resources :presentations
   end
 
   map.root :controller => 'home'

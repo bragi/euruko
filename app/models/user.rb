@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   def owner
     self
   end
+
+  def full_name
+    [first_name, last_name].join(" ")
+  end
 end
