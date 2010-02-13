@@ -4,7 +4,7 @@ set :deploy_to, "/home/bragi-web/euruko"
 set :application, "euruko"
 set :scm, :git
 set :repository,  "http://github.com/bragi/euruko.git"
-set :branch, "no_bundler"
+set :branch, "master"
 set :normalize_asset_timestamps, false
 set :use_sudo, false
 
