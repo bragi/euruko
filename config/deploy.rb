@@ -4,7 +4,7 @@ set :deploy_to, "/home/bragi-web/euruko"
 set :application, "euruko"
 set :scm, :git
 set :repository,  "http://github.com/bragi/euruko.git"
-set :branch, "master"
+set :branch, "no_bundler"
 set :normalize_asset_timestamps, false
 set :use_sudo, false
 
@@ -20,10 +20,13 @@ namespace :deploy do
   end
 end
 
-namespace :bundle do
-  task :install do
-    run "cd #{current_path} && bundle install --without=test"
+namespace :euruko do
+  task :link_database_configuration do
+    run "ln -s #{deploy_to}/database.yml #{latest_release}/config/"
+  end
+  task :link do
+    link_database_configuration
   end
 end
 
-after "deploy:finalize_update", "bundle:install"
+after "deploy:finalize_update", "euruko:link"
