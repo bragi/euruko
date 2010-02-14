@@ -6,8 +6,7 @@ Feature: Billing
   Scenario: Providing billing data
     Given I log in as user
     When I follow "Add billing data"
-    Then I should see billing data form
-    When I fill in "Company name" with "Johndoeary ltd."
+    And I fill in "Company name" with "Johndoeary ltd."
     And I fill in "Full address" with "12 Some Street\nInteresting City\n90-210\nEven Better Country"
     And I fill in "VAT-ID" with "XX10020929289"
     And I fill in "Other information" with "Tax collectors are nice, really!"

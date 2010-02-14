@@ -56,8 +56,10 @@ Spec::Runner.configure do |config|
   #
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
   
-  config.include AuthlogicSpecHelper
+  config.include(AuthlogicSpecHelper)
   config.before(:each) do
     activate_authlogic
   end
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 end

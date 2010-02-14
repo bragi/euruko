@@ -1,0 +1,9 @@
+%h1 Reset your password
+
+- form_tag(password_reset_path) do
+  %dl
+    %dt= label_tag(:email, "E-mail")
+    %dd= text_field_tag(:email)
+  
+  %p= submit_tag("Reset my password")
+  

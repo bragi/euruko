@@ -1,0 +1,14 @@
+%h1 Set your new password
+
+- form_for(@user, :url => password_reset_path(:id => @user.perishable_token), :method => "put") do |f|
+  %dl
+    %dt= f.label(:password, "Password")
+    %dd
+      = f.password_field(:password)
+      = f.error_message_on(:password)
+    %dt= f.label(:password_confirmation, "Password confirmation")
+    %dd
+      = f.password_field(:password_confirmation)
+      = f.error_message_on(:password_confirmation)
+
+  %p= f.submit("Change my password and log me in")
