@@ -11,3 +11,9 @@ Feature: User authentication
     And I fill in "Password" with "user123"
     And I press "Log in"
     Then I should see "We will notify you when the registration starts"
+
+  Scenario: Logging out
+    Given I log in as user with email "john@example.com"
+    Then I should see my profile data
+    When I press "Log out"
+    Then I should not be logged in

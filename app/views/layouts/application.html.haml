@@ -4,5 +4,11 @@
     %title Euruko 2010
   %body
     #flash= flash[:notice]
+    - if current_user
+      #header
+        You are logged in as
+        = "%s." % h(current_user.full_name)
+        = button_to("Log out", user_session_path, :method => :delete)
     #content
+        
       = yield
