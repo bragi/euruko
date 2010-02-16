@@ -45,5 +45,6 @@
       - billing_information.notes.with do |notes|
         %dt Notes
         %dd= h(notes)
+    %p= link_to("Change billing information", edit_billing_information_path(billing_information))
   - @user.billing_information.without do
-    %p= link_to("Add billing data", new_billing_information_path)
+    %p= link_to("Add billing information", new_billing_information_path)

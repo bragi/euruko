@@ -14,6 +14,8 @@ module NavigationHelpers
       '/administration'
     when /administration login page/
       new_administration_admin_session_path
+    when /my profile data/
+      user_path(@current_user)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

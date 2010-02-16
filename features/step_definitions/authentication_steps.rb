@@ -10,6 +10,7 @@ Given /^I log in as user(?: with email "([^\"]+)")?$/ do |email|
   And %Q{I fill in "E-mail" with "john@example.com"}
   And %Q{I fill in "Password" with "user123"}
   And %Q{I press "Log in"}
+  @current_user = User.find_by_email(email)
 end
 
 Given /^I log in as admin$/ do
