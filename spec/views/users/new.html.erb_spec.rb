@@ -7,7 +7,6 @@ describe "/users/new" do
 
   #Delete this example and add some real ones or delete this file
   it "allows to create new user" do
-    response.should have_tag('p', %r[Create your account])
     response.should have_tag('form[action=?]', users_path)
   end
 end

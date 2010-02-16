@@ -1,7 +1,8 @@
-!!!
+!!! 5
 %html
   %head
-    %title Euruko 2010
+    = head_title("EuRuKo 2010")
+    = meta_description("Register to EuRuKo 2010")
   %body
     #flash= flash[:notice]
     - if current_user
@@ -10,5 +11,5 @@
         = "%s." % h(current_user.full_name)
         = button_to("Log out", user_session_path, :method => :delete)
     #content
-        
+      %h1= page_title
       = yield

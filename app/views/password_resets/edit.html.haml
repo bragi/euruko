@@ -1,4 +1,4 @@
-%h1 Set your new password
+- set_head_and_page_title("Set your new password")
 
 - form_for(@user, :url => password_reset_path(:id => @user.perishable_token), :method => "put") do |f|
   %dl

@@ -5,7 +5,7 @@ describe "/home/index" do
     render 'home/index'
   end
 
-  it "should have welcome header" do
-    response.should have_tag('h1', %r[Welcome to Euruko])
+  it "should have registration form" do
+    response.should have_tag('form[action=?]', users_path)
   end
 end
