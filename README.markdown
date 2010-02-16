@@ -12,13 +12,15 @@ Minimal conference handling app that allows to:
 
 Make sure you have RubyGems 1.3.5 installed and that you have http://gemcutter.org/ in your gem sources.
 
-Install bundler gem:
+To run the application:
 
-    gem install bundler
+    rake gems:install
+    rake db:migrate
+    ./script/server
 
-Run in application directory:
+To run tests:
 
-    bundle install
-    bundle exec rake prepare
+    RAILS_ENV=cucumber rake gems:install
+    rake db:migrate
+    rake spec cucumber
 
-You are ready to go.
