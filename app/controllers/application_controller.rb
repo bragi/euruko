@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :current_admin_session, :current_admin
   
   def require_owner
-    current_admin || object.owner == current_user || send_unauthorized
+    current_admin || (object && object.owner == current_user) || send_unauthorized
   end
   
   def send_unauthorized
