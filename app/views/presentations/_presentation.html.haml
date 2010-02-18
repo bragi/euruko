@@ -1,13 +1,15 @@
-%dl[presentation]
-  %dt Topic
-  %dd= h(presentation.topic)
-  
-  %dt Description
-  %dd= h(presentation.description)
-  
-  %dt Speaker information
-  %dd= h(presentation.speaker_description)
-  
-  %dt Length
-  %dd= presentation_length(presentation)
-  
+%div[presentation]
+  %dl
+    %dt Topic
+    %dd.topic= h(presentation.topic)
+    
+    %dt Description
+    %dd.description= h(presentation.description)
+    
+    %dt Speaker information
+    %dd.speaker= h(presentation.speaker_description)
+    
+    %dt Length
+    %dd.length= presentation_length(presentation)
+
+  %p= link_to("Edit", edit_presentation_path(presentation))
