@@ -13,9 +13,11 @@ Feature: editing presentations
       | Description         | Even better description |
       | Speaker information | The best speaker ever   |
     And I choose "Lightning talk"
+    And I attach the file "features/fixtures/presentation.png" to "Photo"
     And I press "Update presentation"
     Then I should see "Your account data"
     And I should see "Even better topic" within ".topic"
     And I should see "Even better description" within ".description"
     And I should see "The best speaker ever" within ".speaker"
     And I should see "Lightning talk" within ".length"
+    And I should see presentation photo
