@@ -12,6 +12,7 @@
     %dt Length
     %dd.length= presentation_length(presentation)
 
-  = image_tag presentation.photo.url(:normal)
+    %dt Photo
+    %dd.photo= image_tag presentation.photo.url(:normal)
 
   %p= link_to("Edit", edit_presentation_path(presentation))
