@@ -1,0 +1,12 @@
+#user_menu
+  %ul
+    = menu_to "Home", root_path
+    - if current_user
+      %li= link_to "Log out", user_session_path, :method => :delete
+      %li
+        You are logged in as
+        = "%s." % h(current_user.full_name)
+    - else
+      = menu_to "Login", new_user_session_path
+      = menu_to "Signup", new_user_path
+  
