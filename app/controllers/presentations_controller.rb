@@ -7,5 +7,7 @@ class PresentationsController < ApplicationController
   actions :new, :show, :create, :edit, :update
   
   create.before {object.user = current_user}
-  [create, update].each {|action| action.wants.html {redirect_to current_user}}
+  create.wants.html {redirect_to current_user}
+
+  update.wants.html {redirect_to current_user}
 end
