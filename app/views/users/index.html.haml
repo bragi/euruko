@@ -3,5 +3,6 @@
 %ul#users
   - @users.each do |user|
     %li
-      = h(user.full_name)
+      .gravatar= gravatar_for(user)
+      %p.full_name= h(user.full_name)
       

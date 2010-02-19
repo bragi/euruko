@@ -10,3 +10,4 @@ Feature: User list
     And I follow "Users"
     Then I should see "Yukihiro"
     And I should see "Ragnarson"
+    And I should see gravatar
