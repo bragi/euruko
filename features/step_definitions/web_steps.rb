@@ -10,7 +10,7 @@ require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "pat
 
 module WithinHelpers
   def with_scope(locator)
-    within(locator || 'html') { yield }
+    locator ? within(locator) { yield } : yield
   end
 end
 World(WithinHelpers)
@@ -58,7 +58,7 @@ end
 # TODO: Add support for checkbox, select og option
 # based on naming conventions.
 #
-When /^(?:|I )fill in the following(?: within "([^\"]*)"|)?:$/ do |fields, selector|
+When /^(?:|I )fill in the following(?: within "([^\"]*)")?:$/ do |selector, fields|
   with_scope(selector) do
     fields.rows_hash.each do |name, value|
       When %{I fill in "#{name}" with "#{value}"}
@@ -120,9 +120,9 @@ end
 Then /^(?:|I )should not see "([^\"]*)"(?: within "([^\"]*)")?$/ do |text, selector|
   with_scope(selector) do
     if defined?(Spec::Rails::Matchers)
-      page.should_not have_content(text)
+      page.should have_no_content(text)
     else
-      assert_not page.has_content?(text)
+      assert page.has_no_content?(text)
     end
   end
 end
@@ -131,9 +131,9 @@ Then /^(?:|I )should not see \/([^\/]*)\/(?: within "([^\"]*)")?$/ do |regexp, s
   regexp = Regexp.new(regexp)
   with_scope(selector) do
     if defined?(Spec::Rails::Matchers)
-      page.should_not have_xpath('//*', :text => regexp)
+      page.shoul have_not_xpath('//*', :text => regexp)
     else
-      assert_not page.has_xpath?('//*', :text => regexp)
+      assert page.has_not_xpath?('//*', :text => regexp)
     end
   end
 end

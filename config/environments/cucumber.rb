@@ -21,12 +21,12 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem "rspec", :version => "=1.3.0", :lib => 'spec'
-config.gem "rspec-rails", :version => "=1.3.2", :lib => 'spec'
-config.gem "cucumber", :version => "=0.6.2"
-config.gem "cucumber-rails", :version => "=0.2.3", :lib => 'cucumber'
-config.gem "database_cleaner", :version => "=0.2.3"
-config.gem "capybara", :version => "=0.3.0"
+config.gem 'cucumber-rails',   :lib => false, :version => '>=0.2.4' unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber-rails'))
+config.gem 'database_cleaner', :lib => false, :version => '>=0.4.3' unless File.directory?(File.join(Rails.root, 'vendor/plugins/database_cleaner'))
+config.gem 'capybara',         :lib => false, :version => '>=0.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/capybara'))
+config.gem 'rspec',            :lib => false, :version => '>=1.3.0' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
+config.gem 'rspec-rails',      :lib => false, :version => '>=1.3.2' unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 config.gem "factory_girl", :version => "=1.2.3"
 config.gem "ruby-debug", :version => "=0.10.3"
 config.gem "email_spec", :version => "=0.4.0", :lib => 'email_spec'
+

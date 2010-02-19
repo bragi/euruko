@@ -6,3 +6,4 @@ log/*.log
 rerun.txt
 vendor/bundler_gems/*
 *.swp
+public/system/*

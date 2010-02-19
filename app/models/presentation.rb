@@ -7,6 +7,8 @@ class Presentation < ActiveRecord::Base
 
   belongs_to :user
 
+  has_attached_file :photo, :styles => { :normal => "300x300", :thumb => "100x100" }
+
   before_validation :assign_user
   after_validation :add_speaker_email_errors
 
