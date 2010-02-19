@@ -12,8 +12,9 @@ Feature: User authentication
     And I press "Log in"
     Then I should see "We will notify you when the registration starts"
 
+  @emulate_rails_javascript
   Scenario: Logging out
     Given I log in as user with email "john@example.com"
     Then I should see my profile data
-    When I press "Log out"
+    When I follow "Log out"
     Then I should not be logged in

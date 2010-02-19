@@ -2,6 +2,8 @@
 
 %p#site_news We will notify you when the registration starts
 
+%p.gravatar= gravatar_for(@user)
+
 %dl#user_data
   %dt First name
   %dd= h(@user.first_name)
