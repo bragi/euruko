@@ -1,0 +1,7 @@
+- set_head_and_page_title("Registered users")
+
+%ul#users
+  - @users.each do |user|
+    %li
+      = h(user.full_name)
+      
