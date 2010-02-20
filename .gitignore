@@ -8,3 +8,4 @@ vendor/bundler_gems/*
 *.swp
 public/system/*
 *.swp
+tmp
