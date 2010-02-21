@@ -10,7 +10,7 @@
     <!--[if IE]> 
     <%= stylesheet_link_tag 'ie', :media => "screen, projection" %>  
     <![endif]-->
-  %body
+  %body{:class => page_class}
     #header
       #nav
         = render :partial => 'layouts/menu' 

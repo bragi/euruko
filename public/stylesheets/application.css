@@ -242,3 +242,21 @@ form legend {
   font-weight: bold;
   font-size: 1.33em;
   margin-bottom: 0.5em; }
+
+img.gravatar {
+  border: 1px solid black; }
+
+.users.show p.gravatar {
+  float: left; }
+.users.show #user_data.details, .users.show #presentations, .users.show #billing_information {
+  margin-left: 72px; }
+.users.show dd {
+  font-weight: bold;
+  margin-bottom: 0.5em; }
+
+ul#users li {
+  display: block;
+  float: left;
+  list-style: none;
+  text-align: center;
+  width: 100px; }
