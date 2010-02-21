@@ -7,3 +7,4 @@ rerun.txt
 vendor/bundler_gems/*
 public/system/*
 *.swp
+tmp/*

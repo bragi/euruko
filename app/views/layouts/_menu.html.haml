@@ -4,9 +4,7 @@
     = menu_to "Users", users_path
     - if current_user
       %li= link_to "Log out", user_session_path, :method => :delete
-      %li
-        You are logged in as
-        = "%s." % h(current_user.full_name)
+      %li= link_to(h("You are logged in as %s." % current_user.full_name), current_user)
     - else
       = menu_to "Login", new_user_session_path
       = menu_to "Signup", new_user_path
