@@ -1,0 +1,7 @@
+- set_head_and_page_title("Set your new password")
+
+- form_for(current_user, :url => password_path, :method => "put") do |f|
+  %dl
+    = render :partial => 'password_resets/fields', :locals => {:f => f}
+
+  %p= f.submit("Change my password")
