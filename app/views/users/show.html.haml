@@ -4,7 +4,7 @@
 
 %p.gravatar= gravatar_for(@user)
 
-%dl#user_data
+%dl#user_data.details
   %dt First name
   %dd= h(@user.first_name)
   
@@ -30,7 +30,7 @@
   - @user.billing_information.with do |billing_information|
     %h2 Your billing information
     
-    %dl
+    %dl.details
       %dt Company name
       %dd= h(billing_information.name)
       
