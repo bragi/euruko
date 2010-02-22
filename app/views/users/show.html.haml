@@ -1,22 +1,25 @@
 - set_head_and_page_title("Your account data")
 
-%p#site_news We will notify you when the registration starts
+%p#site_news We will notify you when the registration starts.
 
 %p.gravatar= gravatar_for(@user)
 
-%dl#user_data.details
-  %dt First name
-  %dd= h(@user.first_name)
-  
-  %dt Last name
-  %dd= h(@user.last_name)
-  
-  - unless @user.nick_name.blank?
-    %dt Nick name
-    %dd= h(@user.nick_name)
+#user_data.details
+  %dl
+    %dt First name
+    %dd= h(@user.first_name)
+    
+    %dt Last name
+    %dd= h(@user.last_name)
+    
+    - unless @user.nick_name.blank?
+      %dt Nick name
+      %dd= h(@user.nick_name)
 
-  %dt E-mail
-  %dd= h(@user.email)
+    %dt E-mail
+    %dd= h(@user.email)
+
+  %p= link_to("Change password", edit_password_path)
 
 #presentations
   - unless @user.presentations.blank?

@@ -1,0 +1,8 @@
+%dt= f.label(:password, "Password")
+%dd
+  = f.password_field(:password)
+  = f.error_message_on(:password)
+%dt= f.label(:password_confirmation, "Password confirmation")
+%dd
+  = f.password_field(:password_confirmation)
+  = f.error_message_on(:password_confirmation)
