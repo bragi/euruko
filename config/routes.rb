@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
     administration.root :controller => 'home'
     administration.resource :admin_session
     administration.resources :presentations
+    administration.resources :users
   end
 
   map.root :controller => 'home'
