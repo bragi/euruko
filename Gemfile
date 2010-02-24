@@ -1,16 +1,18 @@
 source "http://gemcutter.org"
 source "http://gems.github.com/"
 
+gem "authlogic", "2.1.3"
 gem 'rake', '0.8.7'
-gem 'mime-types', '1.15'
+gem 'mime-types', '1.15', :require => nil
 gem 'i18n', '0.3.3'
 gem 'tmail', '1.2.0'
 gem 'tzinfo', '0.3.16'
-gem "rails", "2.3.5"
-gem "sqlite3-ruby", "1.2.5", :require => 'sqlite3'
+gem "rails", "2.3.5", :require => nil
+gem "pg", "0.8.0"
 gem "haml", "2.2.17"
-gem "authlogic", "2.1.3"
 gem "resource_controller", "0.6.6"
+gem "site_meta", "0.2.0"
+gem "paperclip", "2.3.1.1"
 
 group :test do
   gem "rspec", "1.3.0"

@@ -38,13 +38,11 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
-  config.gem "rack", :version => "1.0.1"
-  config.gem "sqlite3-ruby", :version => "1.2.5", :lib => 'sqlite3'
-  config.gem "haml", :version => "2.2.17"
-  config.gem "authlogic", :version => "2.1.3"
-  config.gem "resource_controller", :version => "0.6.6"
-  config.gem "site_meta", :version => "0.2.0"
-  config.gem "paperclip", :version => "2.3.1.1"
+  # config.gem "haml", :version => "2.2.17"
+  # config.gem "authlogic", :version => "2.1.3"
+  # config.gem "resource_controller", :version => "0.6.6"
+  # config.gem "site_meta", :version => "0.2.0"
+  # config.gem "paperclip", :version => "2.3.1.1"
 end
 
 Haml::Template.options[:format] = :html5
