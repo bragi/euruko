@@ -43,8 +43,8 @@ Rails::Initializer.run do |config|
   config.gem "haml", :version => "2.2.17"
   config.gem "authlogic", :version => "2.1.3"
   config.gem "resource_controller", :version => "0.6.6"
-  config.gem "site_meta", :version => "=0.2.0"
-  config.gem "paperclip", :version => "=2.3.1.1"
+  config.gem "site_meta", :version => "0.2.0"
+  config.gem "paperclip", :version => "2.3.1.1"
 end
 
 Haml::Template.options[:format] = :html5

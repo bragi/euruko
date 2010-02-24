@@ -15,7 +15,14 @@ class Presentation < ActiveRecord::Base
   attr_accessor :speaker_email
 
   alias owner user
-
+  
+  @@deadline = Date.civil(2010, 3, 1)
+  cattr_accessor :deadline
+  
+  def self.deadline_reached?(now=Time.now)
+    now >= deadline
+  end
+  
   def assign_user
     self.user = User.find_by_email(speaker_email) unless user
   end

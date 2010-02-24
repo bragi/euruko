@@ -4,7 +4,8 @@ Feature: Submitting presentations
   I want to submit my presentation
 
   Scenario: Submitting presentation
-    Given I log in as user
+    Given deadline for presentations is not reached yet
+    And I log in as user
     And I follow "Submit presentation"
     Then I should see "Describe your presentation"
     And I fill in "Topic" with "Clusters on Rails"
@@ -15,3 +16,9 @@ Feature: Submitting presentations
     Then I should see my profile data
     And I should see "Your presentations"
     And I should see "Clusters on Rails"
+
+  Scenario: Deadline reached
+    Given deadline for presentations is reached
+    When I log in as user
+    Then I should not see "Submit presentation"
+    And I should see "Presentation submission closed"

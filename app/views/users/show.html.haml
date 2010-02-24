@@ -27,7 +27,10 @@
   
     = render(:partial => "presentations/presentation", :collection => @user.presentations)
 
-  %p= link_to("Submit presentation", new_presentation_path)
+  - unless Presentation.deadline_reached?
+    %p= link_to("Submit presentation", new_presentation_path)
+  - else
+    %p Presentation submission closed
 
 #billing_information
   - @user.billing_information.with do |billing_information|
