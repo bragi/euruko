@@ -1,6 +1,7 @@
 #user_menu
   %ul
     = menu_to "Home", "http://www.euruko2010.org/"
+    = menu_to "Talks", presentations_path
     = menu_to "Users", users_path
     - if current_user
       %li= link_to "Log out", user_session_path, :method => :delete

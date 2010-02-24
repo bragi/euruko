@@ -1,0 +1,18 @@
+- set_head_and_page_title(h(@presentation.topic))
+.presentation_main_info
+  .photo= image_tag @presentation.photo.url(:normal)
+  %p 
+    By 
+    %span.speaker=h(@presentation.user.full_name)
+
+  %p.description
+    = h(@presentation.description)
+
+  %p.length
+    %strong Length:
+    = presentation_length(@presentation)
+.presentation_additional_info
+%h2 About speaker
+%p=h(@presentation.speaker_description)
+
+

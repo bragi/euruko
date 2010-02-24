@@ -1,0 +1,11 @@
+- set_head_and_page_title("List of talks")
+
+%ul#presentations_list
+  - @presentations.each do |presentation|
+    %li
+      %p.photo= image_tag presentation.photo.url(:thumb)
+      %p.topic= link_to(h(presentation.topic), presentation_path(presentation))
+      %p
+        By 
+        %span.speaker=h(presentation.user.full_name)
+      %p.short_description= truncate(h(presentation.description), 250)

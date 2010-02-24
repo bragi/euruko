@@ -5,3 +5,4 @@ end
 Given /^deadline for presentations is reached$/ do
   Presentation.deadline = Time.now
 end
+

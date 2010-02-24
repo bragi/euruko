@@ -260,3 +260,19 @@ ul#users li {
   list-style: none;
   text-align: center;
   width: 100px; }
+
+.presentation_main_info .photo, ul#presentations_list .photo {
+  float: left;
+  padding: 0 10px 10px 0; }
+.presentation_main_info .speaker, ul#presentations_list .speaker {
+  font-weight: bold; }
+.presentation_main_info li, ul#presentations_list li {
+  list-style: none;
+  clear: left; }
+.presentation_main_info a, ul#presentations_list a {
+  font-size: 150%; }
+.presentation_main_info .description, ul#presentations_list .description {
+  padding-top: 2em; }
+
+.presentation_additional_info {
+  clear: left; }
