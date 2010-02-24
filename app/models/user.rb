@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :presentations, :dependent => :destroy
   has_one :billing_information
   
+  attr_accessor :old_password
+
   def deliver_password_reset_instructions!
     reset_perishable_token!  
     PasswordMailer.deliver_instructions(self)

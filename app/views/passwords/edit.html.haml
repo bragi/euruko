@@ -2,6 +2,10 @@
 
 - form_for(current_user, :url => password_path, :method => "put") do |f|
   %dl
+    %dt= f.label(:old_password, "Old password")
+    %dd
+      = f.password_field(:old_password)
+      = f.error_message_on(:old_password)
     = render :partial => 'password_resets/fields', :locals => {:f => f}
 
   %p= f.submit("Change my password")
