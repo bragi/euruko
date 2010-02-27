@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20100305002307) do
+=======
+ActiveRecord::Schema.define(:version => 20100227174153) do
+>>>>>>> Implemented payment confirmations
 
   create_table "admins", :force => true do |t|
     t.string   "email"
