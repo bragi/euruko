@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218090559) do
+ActiveRecord::Schema.define(:version => 20100227170058) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -44,6 +44,18 @@ ActiveRecord::Schema.define(:version => 20100218090559) do
   end
 
   add_index "billing_informations", ["user_id"], :name => "index_billing_informations_on_user_id", :unique => true
+
+  create_table "payments", :force => true do |t|
+    t.integer  "user_id",                                    :null => false
+    t.integer  "seller_id",                                  :null => false
+    t.decimal  "amount",      :precision => 10, :scale => 2, :null => false
+    t.string   "description",                                :null => false
+    t.string   "firstname",                                  :null => false
+    t.string   "lastname",                                   :null => false
+    t.string   "email",                                      :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "presentations", :force => true do |t|
     t.string   "topic",               :null => false
