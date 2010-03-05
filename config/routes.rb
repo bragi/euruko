@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
     administration.resource :admin_session
     administration.resources :presentations
     administration.resources :users
+    administration.resources :posts
   end
 
   map.root :controller => 'home'

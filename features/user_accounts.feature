@@ -5,7 +5,7 @@ Feature: User accounts
 
   Scenario: Creating user account
     Given I access the site as guest
-    When I go to the home page
+    When I go to the user registration page
     When I fill in "E-mail" with "user@example.com"
     And I fill in "Password" with "password"
     And I fill in "Password confirmation" with "password"

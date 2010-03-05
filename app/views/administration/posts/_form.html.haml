@@ -1,0 +1,13 @@
+- form_for([:administration, @post]) do |f|
+  %dl
+    %dt= f.label(:title, "Title")
+    %dd
+      = f.text_field(:title)
+      = f.error_message_on(:title)
+    
+    %dt= f.label(:body, "Body")
+    %dd
+      = f.text_area(:body)
+      = f.error_message_on(:body)
+
+  %p= f.submit(@post.new_record? ? "Create post" : "Update post")

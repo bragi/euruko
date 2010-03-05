@@ -2,7 +2,12 @@
 - set_page_title(image_tag('/images/banner.jpg', :alt => 'Euruko 2010 - Kraków, Poland'))
 
 .blog
-  Blog posts goes here
+  - unless @posts.blank?
+    - @posts.each do |post|
+      %h2= h(post.title)
+      %p= post.body
+  - else
+    %p Brak postów.
 
 .sidebar
   %h2 What's EuRuKo?

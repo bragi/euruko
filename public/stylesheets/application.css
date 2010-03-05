@@ -22,8 +22,8 @@ body {
 
 .sidebar {
   float: left;
-  width: 240px;
-  padding-left: 20px; }
+  width: 220px;
+  padding-left: 40px; }
   .sidebar img.icon {
     float: left;
     padding: 0 10px; }

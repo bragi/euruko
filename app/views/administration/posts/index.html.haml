@@ -1,0 +1,9 @@
+- set_head_and_page_title("All blog posts")
+
+= link_to("New", new_administration_post_path)
+- @posts.each do |post|
+  %h2= h(post.title)
+  %p
+    = link_to 'edit', edit_administration_post_path(post)
+    = link_to 'delete', administration_post_path(post), :method => :delete, :confirm => 'Are you sure, you want to destroy this post'
+  %p= post.body
