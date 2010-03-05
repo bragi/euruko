@@ -1,7 +1,6 @@
 class CreatePaymentConfirmations < ActiveRecord::Migration
   def self.up
     create_table :payment_confirmations do |t|
-      t.belongs_to :payment, :null => false
       t.integer :seller_id, :null => false
       t.string :status, :null => false
       t.integer :t_id, :null => false

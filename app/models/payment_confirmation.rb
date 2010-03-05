@@ -1,7 +1,4 @@
 class PaymentConfirmation < ActiveRecord::Base
-  belongs_to :payment
-  
-  validates_presence_of :payment
   validates_presence_of :seller_id
   validates_presence_of :status
   validates_presence_of :t_id
