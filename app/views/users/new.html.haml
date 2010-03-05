@@ -1,3 +1,11 @@
-- set_head_and_page_title("Create your account")
+- set_head_and_page_title("Register to EuRuKo 2010")
 
-= render("form")
+%p
+  Register yourself today and we'll send you e-mail when we have new, good stuff!
+
+= render('users/form')
+
+%p or
+%p
+  = link_to("Log in", new_user_session_path)
+  if you already have an account

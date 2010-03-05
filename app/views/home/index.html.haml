@@ -1,11 +1,35 @@
-- set_head_and_page_title("Register to EuRuKo 2010")
+- set_head_title("EuRuKo 2010 - Kraków, Poland")
+- set_page_title(image_tag('/images/banner.jpg', :alt => 'Euruko 2010 - Kraków, Poland'))
 
-%p
-  Register yourself today and we'll send you e-mail when we have new, good stuff!
+.blog
+  Blog posts goes here
 
-= render('users/form')
+.sidebar
+  %h2 What's EuRuKo?
+  %p EuRuKo is an annual conference about the Ruby programming language with an informal atmosphere and lots of opportunities to listen, to talk, to hack and to have fun. This year takes place in Krakow, Poland, on the 29th-30th of May.
+  
+  %h2 Follow us
+  %p 
+    = image_tag '/images/twitter.png', :class => 'icon'
+    We've got a Twitter account 
+    ="(#{link_to '@euruko', 'http://twitter.com/euruko'})"
+    to keep you up to date on everything related with the conference. If you follow us you'll be getting the most updated information.
 
-%p or
-%p
-  = link_to("Log in", new_user_session_path)
-  if you already have an account
+  %h2 That's Ruby!
+  %p
+    = image_tag '/images/ruby.png', :class => 'icon'
+    Ruby is a dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write. 
+    = link_to 'More...', 'http://www.ruby-lang.org/en/about/'
+
+  %h2 Sponsors
+  %p 
+    Click 
+    = link_to 'here', 'http://wawelhill.com/images/EuRuKo2010_Sponsorship.pdf'
+    to download the 2010 sponsorship package. Please contact sponsorships@euruko2010.org with questions.
+
+  %h3 MicroSponsors
+  %p= link_to( image_tag('/images/proruby.jpg'), 'http://www.prorubyteam.com/')
+
+
+
+
