@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20100305002307) do
   add_index "billing_informations", ["user_id"], :name => "index_billing_informations_on_user_id", :unique => true
 
   create_table "payment_confirmations", :force => true do |t|
+    t.integer  "user_id",         :null => false
     t.integer  "seller_id",       :null => false
     t.string   "status",          :null => false
     t.integer  "t_id",            :null => false
